@@ -1,0 +1,62 @@
+FaQ (often asked questions):
+[you need to have basic knowledge of programming to be able to modify the files]
+
+*** REMEMBER if you create a new class, add it in "index.html" (file path: your game folder) ***
+
+1. How do i create a character? How can i change the hair?
+	- To create a new character, just copy one of the already done characters and change the attributes --> change the skills, attack power etc. (you can leave them like that if you don't want to change them)
+		You can find the characters in: "folder_path:\\js\classes\player\#name of the character class"
+		! The hair comes with the character, so it is recommended to create a hair after creating your own character
+		
+		!!! REMEMBER: when you create a new character, add it to the "menu.js" that is in "folder_path:\\js\menu.js" !!! 
+				~ if you don't know what you should change in menu.js for adding the character in the menu, you should do this:  ¬ in the other "if statements"
+					else if(character == #number_of_next_created_character){	//user can choose this character when he writes the number of the character
+						if(i == 1) player1 = new #your_character_name({player: "p1", x: 200});	//x is the spawning position of the first player (if char. chose)
+						else if(i == 2) player2 = new #your_character_name({player: "p2", x: 1000});	//x is the spawning position of the second player (if char. chose)
+					}
+					~ a little reminder, change the "prompt" command in "menu.js" by adding an information so the user can know that your character is avariable 
+						var character = prompt("insert character (player " + i + ") (1 -> sasuke \n 2 -> obito \n 3 -> madara \n #your_character) ");
+					
+		
+	- hair --> copy one of the already done hairs and change what you need (for example image and X, Y, H, W of the hair) [once you are done with hair, just create it with your character (you can use it on all characters)]
+				~ check the other characters where to put the row: "this.hair_p1 = new #hair_name({player: this.player});" 
+		~ if your hair doesn't fit perfectly with your character, go in the function called "update()" in your #hair_name class and change the values of update(playerX + #value) until you reach your favourite hair place
+		
+//1 done
+		
+2. How can i create my own magic?
+				~ Path of the "magics": "folder_path:\\js\classes\Magics\#name of the magic"
+	- To create your own skill/powerup, you should know what it should do:
+		- if you want to launch/throw it (example: fireball or Shuriken) you should copy one of the already made magics (or re-create it, it's up to you)[fireball or shuriken etc.] 
+			and change the properties (example image, size, position, power etc.) and you can change its "action" in update (what to do after throwing/activating).
+			
+		- if you want to give yourself some buffs (example: aura, power, more stats, etc.), copy one of the files in "powerups" and change what you need. (do not forget to rename it)
+		
+//2 done
+		
+3. How can i modify the power(attributes) of a character? (attack, defense, speed etc.)
+	- you need to go to the folder containing the character ("folder_path:\\js\classes\player\#name_of_the_character")
+		and check in "constructor" the different values.
+			~ info about the variables used in the properties(attributes) of each character:
+				vx --> speed based on X (left/right)
+				vy --> speed based on Y (up/down)
+				def --> defense, decrease the incoming damage from spells and direct attacks
+				health --> the startup health that the character have (max health)
+				mana --> the startup mana that the character have (max mana)
+//3 done
+
+4. How can i create and change the map with my own?
+	- you can do it in "menu.js" (path: "folder_path:\\js\menu.js") writting this code (but modificated by your choice):
+		if(arena == #number_of_arena){
+			stage.image.src = "#your path to the image background";
+			PAUSED = false;
+		}
+	~ a little reminder, modify in menu.js the prompt for the user by adding your map (var arena = prompt("insert the map (1/2/3/#your_map_number)");)
+	Done, enjoy your new map !
+	
+//4 done
+
+5. Can i change the background music?
+	- yes, go in "menu.js" and change the link music (every map have its own music)
+		Example: stage.bg_music = new Audio("sounds/Background/bg.mp3"); --> stage.bg_music = new Audio("sounds/Background/newMusicName.mp3")
+//5 done

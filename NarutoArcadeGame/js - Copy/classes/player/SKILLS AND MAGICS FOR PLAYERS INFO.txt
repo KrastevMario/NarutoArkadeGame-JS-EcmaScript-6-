@@ -1,0 +1,131 @@
+						
+						
+						-[THROWABLE SKILLS (example: fireball)]-	(everything that is not in the skill part is just for info 
+																	 for a better use of the skill, but you can customize it as you want)
+			
+
+			
+//fireball
+	useMagic1(time){
+		if(this.mana.value > this.magic1_mp){	//declare the magic cosumption (declare magic1_mp)
+			if(time - this.magic1_cooldown > 3000){		//declare the magic cooldown (the cooldown time wait in negative so the player can use it immediately)
+				//////the skill//////
+				this.magics.push(new Fireball({		//push the magic skill (info about the difference between skills in the main folder)
+					//player: this,
+					x: this.x,
+					y: this.y + 10,
+					position: this.position,
+					player: this.player
+				}));
+				//////end of skill//////
+				
+				this.mana.value -= this.magic1_consumption;
+				
+				this.magic1_cooldown = time;
+			}
+		}
+	}
+//Cloud of fire
+	useMagic2(time){
+		if(this.mana.value > this.magic2_mp){
+			//////the skill//////
+			this.magics.push(new Cloud({
+				magics: this,
+				x: this.x,
+				y: this.y + 10,
+				position: this.position,
+				player: this.player
+			}));
+			//////end of skill//////
+			
+			this.mana.value -= this.magic2_consumption;
+		}
+	}
+//Shuriken
+	useShuriken(time){
+		if(time - this.shuriken_cooldown > 2000){
+			if(this.position == "r"){
+				this.image = player1Sprites[33];
+			}
+			else if(this.position == "l"){
+				this.image = player1Sprites[38];
+			}
+			
+			//////the skill//////
+			this.magics.push(new Shuriken({
+				player_main: this,
+				x: this.x,
+				y: this.y + 25,
+				position: this.position,
+				player: this.player
+			}));
+			//////end of skill//////
+			
+			this.shuriken_cooldown = time;
+		}
+		//image after shuriken
+		if(time - this.shuriken_cooldown > 200 && this.position == "r"){
+			this.image = player1Sprites[26];
+		}
+		else if(time - this.shuriken_cooldown > 200 && this.position == "l"){
+			this.image = player1Sprites[36];
+		}
+	}
+	
+	
+	
+	
+					-[POWERUPS (different forms, different auras etc.) example: Eightgates aura]-
+					
+					
+					
+//Susano'o 
+	usePowerup1(time){	
+		if(!this.powerup1_active){	//check if the skill is active, if not, use the skill form
+			if(this.mana.value > this.powerup1_mp){
+				//////The skill//////
+				this.powerups.push(new Susanoo_first_stage({
+					//player: this,
+					x: this.x,
+					y: this.y,
+					position: this.position,
+					player: this.player
+				}));
+				/////end of skill//////
+				this.powerup1_active = true;
+				this.mana.value -= this.magic1_consumption;
+			}
+		}
+		else{
+			this.powerup1_active = false;
+			this.powerups.visit(function(x){
+				if(x.value == "Susanoo_first_stage") x.deactivate()	//deactivate the skill
+			});
+		}
+	}
+//Eightgates
+	usePowerup1(time){
+		if(this.mana.value > this.magic1_mp){
+			if(!this.powerup1_active){
+				//////The skill//////
+				this.powerups.push(new Eightgates({
+					//player: this,
+					x: this.x,
+					y: this.y,
+					position: this.position,
+					player: this.player
+				}));
+				/////end of skill//////
+				this.powerup1_active = true;
+				this.mana.value -= this.magic1_consumption;
+			}
+			else{
+				this.powerup1_active = false;
+				this.powerups.visit(function(x){
+					if(x.value == "eightgates") x.deactivate()	//the name of the power up skill
+				});
+			}
+		}
+	}
+	
+						

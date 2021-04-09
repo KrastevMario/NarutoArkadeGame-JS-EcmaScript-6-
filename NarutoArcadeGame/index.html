@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+	<script src ="js/list/List.js"></script>
+    <!-- <title>Naruto Arcade</title> -->
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+  <div id = "container">
+	<canvas id ="stage" width ="1280px" height="640px"></canvas>
+	<!-- health bar P1 -->
+	<progress id="health_p1" value="100" max="100"></progress>
+	<!-- mana bar P1 -->
+	<progress id="mana_p1" value="100" max="100"></progress>
+	<!-- health bar P2 -->
+	<progress id="health_p2" value="100" max="100"></progress>
+	<!-- mana bar P2 -->
+	<progress id="mana_p2" value="100" max="100"></progress>
+	 <!-- P1 name -->
+	<div id = "p1_name"><font size = 5> SASUKE </font></div>
+	<!-- P2 name -->
+	<div id = "p2_name"><font size = 5> OBITO </font></div>
+	<!-- timer -->
+	<div id="timer">0:00</div>
+  </div>
+  
+  </body>
+  <script src ="js/index.js"></script>
+  <script src ="js/Listener.js"></script>
+	<!-- JS Classes files import -->
+  <script src ="js/classes/stage/sprite.js"></script>	
+  <script src ="js/classes/stage/stage.js"></script>  	<!-- The stage -> Map/Background -->
+  <script src ="js/classes/stage/eff.js"></script>  	
+  
+  <!-- hair import -->
+  <script src ="js/classes/hair/hair.js"></script>
+  <script src ="js/classes/hair/sasuke_hair.js"></script>	
+  <script src ="js/classes/hair/obito_hair.js"></script>
+  <script src ="js/classes/hair/madara_hair.js"></script>
+  <script src ="js/classes/hair/rocklee_hair.js"></script>
+  
+  <!-- characters import -->
+  <script src ="js/classes/player/player.js"></script>
+  <script src ="js/classes/player/sasuke.js"></script>
+  <script src ="js/classes/player/obito.js"></script>
+  <script src ="js/classes/player/madara.js"></script>
+  <script src ="js/classes/player/rocklee.js"></script>
+	<!-- Magics / Skills import -->
+  <script src ="js/classes/magic/magic.js"></script>
+  <script src ="js/classes/magic/fireball.js"></script>
+  <script src ="js/classes/magic/cloud.js"></script>
+  <script src ="js/classes/magic/shuriken.js"></script>
+  
+	<!-- Power up -->
+  <script src ="js/classes/powerup/powerup.js"></script>
+  <script src ="js/classes/powerup/attacks/meteor.js"></script>
+  <script src ="js/classes/powerup/icon.js"></script>
+  <script src ="js/classes/powerup/eightgates.js"></script>
+  <script src ="js/classes/powerup/three_tomoe_sharingan.js"></script>
+  <script src ="js/classes/powerup/susanoo_first_stage.js"></script>
+  <script src ="js/classes/powerup/susanoo_second_stage.js"></script>
+
+	<!-- END import -->
+  <script src ="js/index_end.js"></script>	
+  <script src ="js/menu.js"></script>
+	
+	
+	<table border = 1>
+	  <tr>
+		<th>Player</th>
+		<th>Move</th>
+		<th>Attack</th>
+		<th>Shuriken</th>
+		<th>Magic 1</th>
+		<th>Magic 2</th>
+		<th>Buff 1</th>
+		<th>Pause</th>
+	  </tr>
+	  <tr>
+		<td>Player 1</td>
+		<td>A/S/D/W</td>
+		<td>SPACE</td>
+		<td>E</td>
+		<td>F</td>
+		<td>G</td>
+		<td>R</td>
+		<td>P</td>
+	  </tr>
+	  <tr>
+		<td>Player 2</td>
+		<td>ARROWS</td>
+		<td>ENTER</td>
+		<td>I</td>
+		<td>L</td>
+		<td>K</td>
+		<td>O</td>
+		<td>P</td>
+	  </tr>
+	</table>
+</html>

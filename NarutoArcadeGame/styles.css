@@ -1,0 +1,81 @@
+body{
+  position: relative;
+  background-color:darkgray;
+}
+
+#stage{
+  border: 5px solid yellow;
+  position: relative;
+  left: 6%;
+}
+
+#health_p1{
+	position: absolute;
+	top: 6%;
+	left: 8%;
+	width: 30%;
+	background-color: green;	
+}
+#mana_p1{
+	position: absolute;
+	top: 10%;
+	left: 8%;
+	width: 20%;
+}
+#health_p2{
+	position: absolute;
+	top: 6%;
+	left: 75%;
+	width: 30%;
+	background-color: green;	
+}
+#mana_p2{
+	position: absolute;
+	top: 10%;
+	left: 85%;
+	width: 20%;
+}
+
+#timer{
+	font-family: monospace;
+	position: absolute;
+	top: 2%;
+	left: 52%;
+	font-size: 200%;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 0 4px black;
+}
+
+#container{
+	position: relative;
+	left: 6%;
+	height: 640px;
+	width: 1280px;
+}
+
+#timer, #p1_name, #p2_name{
+  color: yellow;
+  font-family: monospace;
+  position: absolute;
+  font-size: 250%;
+  font-weight: bold;
+  text-shadow: 0 0 8px purple;
+  text-align: right;
+}
+
+#p1_name{
+	left: 3%;
+	width: 200px;
+	top: 6px;
+}
+#p2_name{
+	left: 86%;
+	width: 200px;
+	top: 6px;
+}
+
+table{
+	position: relative;
+	top: 10px;
+}
